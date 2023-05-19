@@ -36,5 +36,10 @@ namespace SintePart
         {
 
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
