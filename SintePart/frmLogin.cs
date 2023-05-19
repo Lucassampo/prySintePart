@@ -24,7 +24,7 @@ namespace SintePart
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
-            
+            this.Close();   
     }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,6 +40,16 @@ namespace SintePart
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cmdAceptar_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Adm" && txtContraseña.Text == "@1a") ;
+            {
+
+
+
+            }
         }
     }
 }
