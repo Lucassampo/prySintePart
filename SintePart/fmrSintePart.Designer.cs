@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSintePart));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
             this.cmdEntrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblBienvenido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BIENVENIDO A SINTEPART";
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Tai Le", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(97, 64);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(409, 42);
+            this.lblBienvenido.TabIndex = 0;
+            this.lblBienvenido.Text = "BIENVENIDO A SINTEPART";
             // 
             // cmdEntrar
             // 
@@ -62,7 +62,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(624, 450);
             this.Controls.Add(this.cmdEntrar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formSintePart";
             this.Text = "SintePart";
@@ -73,7 +73,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBienvenido;
         private System.Windows.Forms.Button cmdEntrar;
     }
 }
