@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
+using System.Data.Common;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
@@ -48,65 +49,80 @@ namespace SintePart
 
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Adm" && txtContraseña.Text == "@1a") 
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+            string modulo = cmbModulo.Text;
+            frmAcceso acceso = new frmAcceso();
+            switch (usuario)
             {
-                if (cmbModulo.Text == "ADM" || cmbModulo.Text == "COM" || cmbModulo.Text == "VTA") 
-                {
-                    this.Hide();
-                    frmAcceso acceso = new frmAcceso();
-                    acceso.ShowDialog();
-                    varintentos = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Usuario y/o contraseñas incorrectos");
-                    varintentos++;
-                }
-                if (txtUsuario.Text =="Jhon" && txtContraseña.Text =="*2b")
-                {
-                    if (cmbModulo.Text == "SIST")
+                case "Amd":
+                    if (contraseña == "@1a" && (modulo == "AMD" || modulo == "COM" || modulo == "VTA"))
                     {
                         this.Hide();
-                        frmAcceso acceso = new frmAcceso();
                         acceso.ShowDialog();
-                        varintentos = 0;
+
                     }
                     else
                     {
-                        MessageBox.Show("Usuario y/o contreseñas incorrectos");
+                        MessageBox.Show("Contraseña y/o usuarios incorrecto");
                         varintentos++;
                     }
-                    if (txtUsuario.Text == "Ceci" && txtContraseña.Text =="*@3c")
-                    { 
-                      if(cmbModulo.Text == "AMD" || cmbModulo.Text =="VTA")
-                      {
-                            this.Hide();
-                            frmAcceso acceso=new frmAcceso();
-                            acceso.ShowDialog();
-                            varintentos = 0;
-                      }
-                      if(txtUsuario.Text =="God" && txtContraseña.Text =="*@#4d")
-                        {
-                            if(cmbModulo.Text == "AMD" || cmbModulo.Text == "SIST" ||cmbModulo.Text == "VTA" ||cmbModulo.Text =="COM")
-                            {
-                                this.Hide();
-                                frmAcceso acceso = new frmAcceso();
-                                acceso.ShowDialog();
-                                varintentos = 0;
-                                    
-                            }
-                            else
-                            {
-                                MessageBox.Show("Usuario y/o contraseñas incorrectas");
-                            }
-                        }
+                    break;
+                case "Jhon":
+                    if (contraseña == "*@3c" && (modulo == "SIST"))
+                    {
+                        this.Hide();
+                        acceso.ShowDialog();
                     }
-                }
-            }
+                    else
+                    {
+                        MessageBox.Show("Contraseña y/o usuarios incorrectos");
+                        varintentos++;
+                    }
+                    break;
+                case "Ceci":
+                    if(contraseña=="*2b" &&(modulo == "AMD"))
+                    {
+                        this.Hide();
+                        acceso.ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña y/o usuario incorrectos");
+                        varintentos++;
+                    }
+                    break;
+                case "God":
+                    if(contraseña=="*@#4d" &&(modulo=="AMD" || modulo== "SIST" || modulo=="VTA" || modulo=="COM" ))
+                    {
+                        this.Hide();
+                        acceso.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseñas y/o usuario incorrectos");
+                        varintentos++; 
+                    }
+                    break;
+                     if(varintentos == 2)
+                    {
+                        MessageBox.Show("Demasiados intentos. Se cerrará el formulario.");
+                        this.Close();
+                    }  
+                    
+
+
+
+
+
+
+
+            }    
+             
+                       
+                
         }
-        
-        
-        
-        }
-    
+
+    }
 }
