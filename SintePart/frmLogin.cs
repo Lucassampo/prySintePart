@@ -56,7 +56,7 @@ namespace SintePart
             switch (usuario)
             {
                 case "Amd":
-                    if (contraseña == "@1a" && (modulo == "AMD" || modulo == "COM" || modulo == "VTA"))
+                    if (contraseña == "@1a" && ( modulo == "AMD" || modulo == "COM" || modulo == "VTA"))
                     {
                         this.Hide();
                         acceso.ShowDialog();
@@ -69,7 +69,7 @@ namespace SintePart
                     }
                     break;
                 case "Jhon":
-                    if (contraseña == "*@3c" && (modulo == "SIST"))
+                    if (contraseña == "*@3c" && ( modulo == "SIST"))
                     {
                         this.Hide();
                         acceso.ShowDialog();
@@ -94,7 +94,7 @@ namespace SintePart
                     }
                     break;
                 case "God":
-                    if(contraseña=="*@#4d" &&(modulo=="AMD" || modulo== "SIST" || modulo=="VTA" || modulo=="COM" ))
+                    if(contraseña=="*@#4d" &&(modulo== "AMD" || modulo== "SIST" || modulo=="VTA" || modulo=="COM" ))
                     {
                         this.Hide();
                         acceso.ShowDialog();
@@ -105,23 +105,10 @@ namespace SintePart
                         varintentos++; 
                     }
                     break;
-                     if(varintentos == 2)
-                    {
-                        MessageBox.Show("Demasiados intentos. Se cerrará el formulario.");
-                        this.Close();
-                    }  
                     
+            }
 
 
-
-
-
-
-
-            }    
-             
-                       
-                
         }
 
     }
